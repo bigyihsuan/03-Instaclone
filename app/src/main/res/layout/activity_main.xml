@@ -24,12 +24,26 @@
         android:layout_height="wrap_content"
         android:text="@string/take_picture" />
 
-    <ImageView
-        android:id="@+id/ivPicture"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="390dp"
-        android:scaleType="fitCenter"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/ivPicture"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:scaleType="fitCenter"
+            tools:srcCompat="@tools:sample/avatars[0]" />
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btnSubmit"

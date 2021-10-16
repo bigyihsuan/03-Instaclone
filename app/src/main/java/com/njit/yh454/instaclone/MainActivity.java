@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView ivPicture;
     private Button btnSubmit;
     private Button btnLogout;
+    private ProgressBar pbLoading;
 
     private File photoFile;
     private String photoFileName = "photo.jpg";
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         ivPicture = findViewById(R.id.ivPicture);
         btnSubmit = findViewById(R.id.btnSubmit);
         btnLogout = findViewById(R.id.btnLogout);
+        pbLoading = findViewById(R.id.pbLoading);
 
         btnTakePicture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,6 +158,10 @@ public class MainActivity extends AppCompatActivity {
         post.setDescription(description);
         post.setImage(new ParseFile(photoFile));
         post.setUser(currentUser);
+
+        // on some click or some loading we need to wait for...
+        pbLoading.setVisibility(ProgressBar.VISIBLE);
+        ivPicture.setVisibility(View.INVISIBLE);
         post.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -168,6 +175,8 @@ public class MainActivity extends AppCompatActivity {
                 etDescription.setText("");
                 ivPicture.setImageResource(0);
                 Toast.makeText(MainActivity.this, "Posted!", Toast.LENGTH_SHORT).show();
+                pbLoading.setVisibility(ProgressBar.INVISIBLE);
+                ivPicture.setVisibility(View.VISIBLE);
             }
         });
     }
