@@ -30,6 +30,12 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
+## Video Walkthrough - Part 2
+
+Here's a walkthrough of implemented user stories:
+
+<img src='walkthrough02.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 ## User Stories - Part 1
 
 The following **required** functionality is completed:
@@ -49,7 +55,7 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
-## Video Walkthrough
+## Video Walkthrough - Part 1
 
 Here's a walkthrough of implemented user stories:
 
