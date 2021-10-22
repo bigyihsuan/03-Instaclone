@@ -2,6 +2,7 @@ package com.njit.yh454.instaclone;
 
 import android.app.Application;
 
+import com.njit.yh454.instaclone.models.Post;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
